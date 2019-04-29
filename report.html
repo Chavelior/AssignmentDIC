@@ -1,0 +1,303 @@
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+<head>
+   <style>
+      h1 {
+         color: white;
+         font-family: 'Helvetica Neue', Helvetica;
+         font-weight: 800;
+         font-size: 60px;
+         margin: 10px;
+      }
+
+      p {
+         color: white;
+         font-family: 'Helvetica Neue', Helvetica;
+         font-weight: 200;
+         margin: 20px;
+      }
+
+      .box {
+         background-color: rgba(0, 0, 0, 0.5);
+         padding: 100px;
+         width: 600px;
+         margin: 30px auto;
+         text-align: center;
+      }
+
+      .fa {
+         padding: 20px;
+         font-size: 30px;
+         width: 50px;
+         text-align: center;
+         text-decoration: none;
+         border-radius: 50%;
+      }
+
+      /* Add a hover effect if you want */
+
+      .fa:hover {
+         opacity: 0.7;
+      }
+
+      /* Facebook */
+
+      .fa-facebook {
+         background: #3B5998;
+         color: white;
+      }
+
+      /* Style the tab */
+
+      .tab {
+         overflow: hidden;
+         border: 1px solid #ccc;
+         background-color: #f1f1f1;
+      }
+
+      /* Style the buttons that are used to open the tab content */
+
+      .tab button {
+         background-color: inherit;
+         float: left;
+         border: none;
+         outline: none;
+         cursor: pointer;
+         padding: 14px 16px;
+         transition: 0.3s;
+      }
+
+      /* Change background color of buttons on hover */
+
+      .tab button:hover {
+         background-color: #ddd;
+      }
+
+      /* Create an active/current tablink class */
+
+      .tab button.active {
+         background-color: #ccc;
+      }
+
+      /* Style the tab content */
+
+      .tabcontent {
+         display: none;
+         padding: 6px 12px;
+         border: 1px solid #ccc;
+         border-top: none;
+      }
+
+      ul {
+         list-style-type: none;
+      }
+
+      .btn1 {
+         border: none;
+         outline: none;
+         padding: 12px 16px;
+         background-color: #f1f1f1;
+         cursor: pointer;
+      }
+      .btn {
+         border: none;
+         outline: none;
+         padding: 12px 16px;
+         background-color: #f1f1f1;
+         cursor: pointer;
+      }
+      .btn3 {
+         border: none;
+         outline: none;
+         padding: 12px 16px;
+         background-color: #f1f1f1;
+         cursor: pointer;
+      }
+
+      /* The sidebar menu */
+
+      .sidenav {
+         height: 100%;
+         /* Full-height: remove this if you want "auto" height */
+         width: 200px;
+         /* Set the width of the sidebar */
+         position: fixed;
+         /* Fixed Sidebar (stay in place on scroll) */
+         z-index: 1;
+         /* Stay on top */
+         top: 50;
+         /* Stay at the top */
+         left: 0;
+         background-color: #111;
+         /* Black */
+         overflow-x: hidden;
+         /* Disable horizontal scroll */
+         padding-top: 20px;
+      }
+
+      /* The navigation menu links */
+
+      .sidenav a {
+         padding: 6px 8px 6px 16px;
+         text-decoration: none;
+         font-size: 25px;
+         color: #818181;
+         display: block;
+      }
+
+      /* When you mouse over the navigation links, change their color */
+
+      .sidenav a:hover {
+         color: #f1f1f1;
+      }
+
+      /* Add a light grey background on mouse-over */
+
+      .btn1:hover {
+         background-color: #ddd;
+      }
+
+      /* Add a dark background to the active button */
+
+      .btn1.active {
+         background-color: #666;
+         color: white;
+      }
+      .btn3:hover {
+         background-color: #ddd;
+      }
+
+      /* Add a dark background to the active button */
+
+      .btn3.active {
+         background-color: #666;
+         color: white;
+      }
+      .btn:hover {
+         background-color: #ddd;
+      }
+
+      /* Add a dark background to the active button */
+
+      .btn.active {
+         background-color: #666;
+         color: white;
+      }
+
+      /* Style page content */
+
+      .main {
+         margin-left: 160px;
+         /* Same as the width of the sidebar */
+         padding: 0px 10px;
+      }
+
+      /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+
+      @media screen and (max-height: 450px) {
+         .sidenav {
+            padding-top: 15px;
+         }
+         .sidenav a {
+            font-size: 18px;
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <div class="tab" align="center" style="height : 90px;">
+      </br>
+      <a class="tablinks">Data Intensive Computing - Assignment 2</a>
+      </br>
+      </br>
+      <a class="tablinks">Project on Mueller Report into investigating of President. Donald Trump</a>
+   </div>
+   <div id="eggy">
+      <div class="sidenav" style="top:100px">
+         </br>
+         <a href="#" onclick="nytd()">
+            <font size=4>NYT Data</font>
+         </a>
+         </br>
+         <a href="#" onclick="twid()">
+            <font size=4>Twitter Data</font>
+         </a>
+         </br>
+         <a href="#" onclick="wordco()">
+            <font size=4>Word Co-occurence</font>
+         </a>
+         </br>
+      </div>
+   </div>
+   <div id="all_words_nyt" style="display:block;  padding-left:250px;">
+      <div id="myBtnContainer">
+         <button class="btn active" onclick="allWCNY()">Top 10 words in the full data.</button>
+         <button class="btn" onclick="wallWCNY()">Subtopic Wall </button>
+         <button class="btn" onclick="obWCNY()">Subtopic Obama </button>
+         <button class="btn" onclick="impWCNY()">Subtopic Impeach</button>
+         <button class="btn" onclick="witWCNY()">Subtopic Witch</button>
+      </div>
+      <div id="all_words_yt_wc" align="center" style="display:block">
+         <img src="All_NY.png" height="600" width="800">
+      </div>
+      <div id="wall_words_yt_wc" align="center" style="display:none">
+         <img src="Wall_NY.png" height="600" width="800">
+      </div>
+      <div id="ob_words_yt_wc" align="center" style="display:none">
+         <img src="Obama_NY.png" height="600" width="800">
+      </div>
+      <div id="imp_words_yt_wc" align="center" style="display:none">
+         <img src="Impeach_NY.png" height="600" width="800">
+      </div>
+      <div id="wit_words_yt_wc" align="center" style="display:none">
+         <img src="Witch_NY.png" height="600" width="800">
+      </div>
+   </div>
+   <div id="all_words_twitter" style="display:none; padding-left:250px;">
+      <div id="myBtnContainer1">
+         <button class="btn1 active" onclick="allWCTW()">Top 10 words in the full data.</button>
+         <button class="btn1" onclick="wallWCTW()">Subtopic Wall </button>
+         <button class="btn1" onclick="obWCTW()">Subtopic Obama </button>
+         <button class="btn1" onclick="impWCTW()">Subtopic Impeach</button>
+         <button class="btn1" onclick="witWCTW()">Subtopic Witch</button>
+      </div>
+      <div id="all_words_tw_wc" align="center" style="display:block">
+         <img src="All_tw.png" height="600" width="800">
+      </div>
+      <div id="wall_words_tw_wc" align="center" style="display:none">
+         <img src="Wall_tw.png" height="600" width="800">
+      </div>
+      <div id="ob_words_tw_wc" align="center" style="display:none">
+         <img src="Obama_tw.png" height="600" width="800">
+      </div>
+      <div id="imp_words_tw_wc" align="center" style="display:none">
+         <img src="Impeach_tw.png" height="600" width="800">
+      </div>
+      <div id="wit_words_tw_wc" align="center" style="display:none">
+         <img src="Witch_tw.png" height="600" width="800">
+      </div>
+   </div>
+   <div id="word_co" style="display:none; padding-left:250px;">
+      <div id="myBtnContainer3">
+         <button class="btn3 active" value="volvo" onclick="NYTWCO()">NewYork articles</button>
+         <button class="btn3" value="saab" onclick="TWCO()">Twitter data</button>
+      </div>
+      <div id="wco_nyt" align="center" style="display:block">
+         <img src="WordCO_ny.png" height="600" width="800">
+      </div>
+      <div id="wco_tw" align="center" style="display:none">
+         <img src="WordCO_tw.png" height="600" width="800">
+      </div>
+   </div>
+
+</body>
+<script type="text/javascript" src="report.js"></script>
+<!--Load D3 from source website-->
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<!--Load D3 from local machine-->
+<script type="text/javascript" src="d3.min.js"></script>
+
+</html>
